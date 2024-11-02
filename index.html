@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Ecommerce Website">
+	<meta name="keywords" content="Ecommerce Website">
+	<title>Ecommerce Website</title>
+	<!-- Favicon -->
+	<link rel="icon" href="./icon.webp">
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- File JS  -->
+	<script src="main.js" defer></script>
+	<script src="swiper.js" defer></script>
+</head>
+
+<body>
+	<!-- Start Header -->
+	<header class="fixed top-0 z-50 bg-[#fff] w-full select-none">
+		<div class="container mx-auto p-4">
+			<!-- Start Top Header -->
+			<div class="flex items-center flex-wrap">
+				<div class="">
+					<a href="#"><img src="./logo.webp" alt="Logo" class="w-36" loading="lazy"></a>
+				</div>
+				<div class="flex flex-1 justify-center mt-2 ">
+					<label for="category">
+						<select name="category" id="category"
+						class="p-2 outline-none cursor-pointer ">
+							<option value="All Category" id="All Category">All Category</option>
+							<option value="Electronics & Digita" id="Electronics & Digita">Electronics & Digita</option>
+							<option value="Phones & Tablet" id="Phones & Tablet">Phones & Tablet</option>
+							<option value="Fashon & Clothes" id="Fashon & Clothes">Fashon & Clothes</option>
+							<option value="TV & Monitor" id="TV & Monitor">TV & Monitor</option>
+							<option value="Jewelry & Watches" id="Jewelry & Watches">Jewelry & Watches</option>
+							<option value="Waching Machine" id="Waching Machine">Waching Machine</option>
+							<option value="Toys & Hobbies" id="Toys & Hobbies">Toys & Hobbies</option>
+					</select>
+					</label>
+					<input type="search" name="search" id="search" placeholder="Search For Products"
+						class="py-2 px-2 outline-none w-72 max-md:max-w-full">
+					<button aria-label="arrow"
+						class="w-10 h-10 bg-[#FF8716] rounded-lg flex justify-center items-center">
+						<svg width="24" height="24" fill="none" stroke="white" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M11 3a8 8 0 1 0 0 16 8 8 0 1 0 0-16z"></path>
+							<path d="m21 21-4.35-4.35"></path>
+						</svg>
+					</button>
+				</div>
+				<div class="flex gap-6 cursor-pointer max-sm:m-3">
+					<div class="relative">
+						<svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+							</path>
+						</svg>
+						<span class="absolute -top-2 -right-3 rounded-sm bg-[#ff8716] w-5 h-5 text-white flex items-center justify-center text-sm"
+							id="icon-love">0</span>
+					</div>
+					<div class="relative" id="shopping-cart">
+						<svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M9 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
+							<path d="M20 20a1 1 0 1 0 0 2 1 1 0 1 0 0-2z"></path>
+							<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+						</svg>
+						<span class="absolute -top-2 -right-3 rounded-sm bg-[#ff8716] w-5 h-5 text-white flex items-center justify-center text-sm"
+							id="icon-shop">0</span>
+					</div>
+				</div>
+			</div>
+			<!-- End Top Header -->
+			<!-- Start Bottom Header -->
+			<div class="p-4 flex justify-between items-center flex-wrap ">
+				<div id="btn-broswe-category"
+					class="bg-[#FF8716] flex items-center justify-between p-2 rounded-md text-white cursor-pointer w-[250px] max-sm:max-w-[215px] group ">
+					<svg width="35" height="35" fill="none" stroke="white" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M21 10H3"></path>
+						<path d="M21 6H3"></path>
+						<path d="M21 14H3"></path>
+						<path d="M21 18H3"></path>
+					</svg>
+					<span class="font-bold capitalize text-xl text-white">browse category</span>
+					<svg class="max-sm:hidden" width="35" height="35" fill="none" stroke="white" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg" class="[&.active]:rotate-180 duration-300"
+						id="arrow-bottom">
+						<path d="M12 5v14"></path>
+						<path d="m19 12-7 7-7-7"></path>
+					</svg>
+				</div>
+				<div id="browse-category-list"
+					class="absolute flex flex-col z-10 duration-500 top-[80%] opacity-0 bg-white w-[250px] [&.active]:opacity-100 max-sm:hidden">
+					<a class="p-3 px-6 hover:ml-2 duration-300 opacity-80 hover:opacity-100 " href="#">Top 10
+						Offers</a>
+					<a class="py-3 px-6 hover:ml-2 duration-300 opacity-80 hover:opacity-100 " href="#">Electronic
+						&
+						Digita</a>
+					<a class="py-3 px-6 hover:ml-2 duration-300 opacity-80 hover:opacity-100 " href="#">Phones &
+						Tablet</a>
+					<a class="py-3 px-6 hover:ml-2 duration-300 opacity-80 hover:opacity-100 " href="#">Fashion &
+						Clothes</a>
+					<a class="py-3 px-6 hover:ml-2 duration-300 opacity-80 hover:opacity-100 " href="#">TV &
+						Monitor</a>
+					<a class="py-3 px-6 hover:ml-2 duration-300 opacity-80 hover:opacity-100 " href="#">Jewelry &
+						Watches</a>
+					<a class="py-3 px-6 hover:ml-2 duration-300 opacity-80 hover:opacity-100 " href="#">Toys &
+						Habbies</a>
+				</div>
+				<ul class="capitalize flex flex-wrap gap-3 cursor-pointer">
+					<li class="hover:text-[#FF8716] duration-200">home</li>
+					<li class="hover:text-[#FF8716] duration-200">about</li>
+					<li class="hover:text-[#FF8716] duration-200">accessories</li>
+					<li class="hover:text-[#FF8716] duration-200">blog</li>
+					<li class="hover:text-[#FF8716] duration-200">contact</li>
+				</ul>
+				<div
+					class="flex gap-2 cursor-pointer text-white font-semibold max-lg:w-full max-lg:justify-end">
+					<div class="flex items-center gap-3 bg-[#FF8716] rounded-lg py-2 px-3 ">
+						<span>Login</span>
+						<svg width="25" height="25" fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+							<path d="m10 17 5-5-5-5"></path>
+							<path d="M15 12H3"></path>
+						</svg>
+					</div>
+					<div class="flex items-center gap-3 bg-[#FF8716] rounded-lg py-2 px-3">
+						<span>Sign Up</span>
+						<svg width="25" height="25" fill="none" stroke="currentColor" stroke-linecap="round"
+							stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+							<path d="M8.5 3a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
+							<path d="M20 8v6"></path>
+							<path d="M23 11h-6"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<!-- End Bottom Header -->
+		</div>
+		<div class="w-[320px] bg-white fixed top-0 -right-80 h-screen [&.active]:right-0 duration-300 overflow-y-scroll " 
+			id="right-side">
+			<div class="flex items-center justify-around w-full capitalize my-3 ">
+				<h2 class="font-bold text-3xl">my cart</h2>
+				<span class="opacity-70">( <span id="number-item" class="font-bold"> 0 </span> item in cart )</span>
+				<svg id="close-right-side" class="hover:stroke-[red] hover:rotate-180 cursor-pointer duration-300" width="30" height="30" fill="none" stroke="currentColor"
+					stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg" class="cursor-pointer">
+					<path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+					<path d="m15 9-6 6"></path>
+					<path d="m9 9 6 6"></path>
+				</svg>
+			</div>
+			<div id="cart-items-container">
+			</div>
+			<div class="absolute bottom-2 border-t-[1px] border-[#888] w-full p-4">
+				<div class="flex justify-between mb-5 capitalize">
+					<span class="opacity-70">subtotal</span>
+					<span class="font-semibold text-[#ff8716] text-lg total_price">$0</span>
+				</div>
+				<div class="">
+					<button aria-label="checkout" class="uppercase py-2 px-4 bg-[#ff8716] text-white font-semibold rounded-md mr-4 ">checkout</button>
+					<button aria-label="shop more" class="uppercase py-2 px-4 border border-[#ff8716] font-semibold rounded-md ">shop more</button>
+				</div>
+			</div>
+					</div>
+	</header>
+	<!-- End Header -->
+	<!-- Start Main -->
+	<main class="container mx-auto mt-52 max-sm:mt-80">
+		<section class="flex items-center max-lg:flex-col ">
+			<!-- Swiper -->
+			<div class="swiper mySwiper w-full lg:w-2/3">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+				<img src="./banner_home1.webp" class="block object-cover" alt="banner1">
+				</div>
+				<div class="swiper-slide">
+				<img src="./banner_home2.webp" class="block object-cover" alt="banner2">
+				</div>
+			</div>
+			<!-- <div class="swiper-pagination"></div> -->
+			</div>
+			<!-- Single Image -->
+			<img src="./banner_home3.webp" alt="banner3" class="w-80 max-lg:w-full">
+		</section>
+		<!-- Start Section Products -->
+		<section class="container p-4 mx-auto">
+			<div class="flex flex-wrap gap-6 capitalize justify-center ">
+				<div class="flex p-6 bg-[#d1d5db] rounded-md cursor-pointer group w-80">
+					<img src="./banner3_1.webp" alt="PC" class="mr-2 group-hover:scale-110 group-hover:rotate-6 duration-200"
+						loading="lazy">
+					<div>
+						<h3 class="font-bold tracking-wide text-xl">break disc <br> deals on this</h3>
+						<p class="">up <br> to <span class="text-[#FF8716] text-2xl">70%</span></p>
+						<button aria-label="shop-now" class="capitalize font-semibold">shop now</button>
+					</div>
+				</div>
+				<div class="flex p-6 bg-[#d1d5db] rounded-md cursor-pointer group w-80">
+					<img src="./banner3_2.webp" alt="Ipad" class="mr-2 group-hover:scale-110 group-hover:rotate-6 duration-200"
+						loading="lazy">
+					<div>
+						<h3 class="font-bold tracking-wide text-xl">break disc <br> deals on this</h3>
+						<p class="">up <br> to <span class="text-[#FF8716] text-2xl">70%</span></p>
+						<button aria-label="shop-now" class="capitalize font-semibold">shop now</button>
+					</div>
+				</div>
+				<div class="flex p-6 bg-[#d1d5db] rounded-md cursor-pointer group w-80">
+					<img src="./banner3_3.webp" alt="Headphone" class="mr-2 group-hover:scale-110 group-hover:rotate-6 duration-200"
+						loading="lazy">
+					<div>
+						<h3 class="font-bold tracking-wide text-xl">break disc <br> deals on this</h3>
+						<p class="">up <br> to <span class="text-[#FF8716] text-2xl">70%</span></p>
+						<button aria-label="shop-now" class="capitalize font-semibold">shop now</button>
+					</div>
+				</div>
+				<div class="flex p-6 bg-[#d1d5db] rounded-md cursor-pointer group w-80">
+					<img src="./banner3_4.webp" alt="TV" class="mr-2 group-hover:scale-110 group-hover:rotate-6 duration-200"
+						loading="lazy">
+					<div>
+						<h3 class="font-bold tracking-wide text-xl">break disc <br> deals on this</h3>
+						<p class="">up <br> to <span class="text-[#FF8716] text-2xl">70%</span></p>
+						<button aria-label="shop-now" class="capitalize font-semibold">shop now</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Section Products -->
+		<!-- Start Section Products JS-->
+		<section class="container p-4 mx-auto select-none ">
+			<div class="border-b-2 border-[#FF8716]">
+				<h4
+					class="uppercase flex gap-3 items-center py-3 px-5 bg-[#FF8716] w-fit text-white font-bold text-lg relative before:absolute before:w-0 before:h-0 before:top-0 before:left-0 before:border-l-[20px] before:border-solid before:border-transparent before:bg-[#fff] before:border-b-[20px] before:border-b-[#e26e02]  ">
+					<svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round"
+						stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z">
+						</path>
+						<path d="M7 7h.01"></path>
+					</svg>
+					Hot Deals
+				</h4>
+			</div>
+			<div class=" Swiper overflow-hidden" id="swiper">
+				<div class="swiper-wrapper flex items-center gap-4 " id="swiperWrapper">
+				</div>
+			</div>
+		</section>
+		<!-- End Section Products JS -->
+		<!-- Start Section Two Img  -->
+		<section>
+			<div class="container mx-auto my-14">
+				<div class="flex justify-center gap-6 flex-wrap">
+					<img src="./banner_box4.webp" alt="" class="" loading="lazy">
+					<img src="./banner_box5.webp" alt="" class="" loading="lazy">
+				</div>
+			</div>
+		</section>
+		<!-- End Section Two Img  -->
+		<!-- Start Section Electronics -->
+		<section class="container p-4 mx-auto select-none">
+			<div class="border-b-2 border-[#FF8716]">
+				<h4
+					class="tracking-widest uppercase flex gap-3 items-center py-3 px-5 bg-[#FF8716] w-fit text-white font-bold text-lg relative before:absolute before:w-0 before:h-0 before:top-0 before:left-0 before:border-l-[20px] before:border-solid before:border-transparent before:bg-[#fff] before:border-b-[20px] before:border-b-[#e26e02]  ">
+					<img src="./computer.webp" alt="" class="w-8" loading="lazy">
+					Electronic
+				</h4>
+			</div>
+			<div class=" Swiper overflow-hidden">
+				<div class="swiper-wrapper flex gap-4 " id="swiper-electronics">
+				</div>
+			</div>
+		</section>
+		<!-- End Section Electronics -->
+		<!-- Start Section Appliances -->
+		<section class="container p-4 mx-auto select-none">
+			<div class="border-b-2 border-[#FF8716]">
+				<h4
+					class="tracking-widest uppercase flex gap-3 items-center py-3 px-5 bg-[#FF8716] w-fit text-white font-bold text-lg relative before:absolute before:w-0 before:h-0 before:top-0 before:left-0 before:border-l-[20px] before:border-solid before:border-transparent before:bg-[#fff] before:border-b-[20px] before:border-b-[#e26e02]  ">
+					appliances
+				</h4>
+			</div>
+			<div class=" Swiper overflow-hidden">
+				<div class="swiper-wrapper flex gap-4 " id="swiper-appliances">
+				</div>
+			</div>
+		</section>
+		<!-- End Section Appliances -->
+		<!-- Start Section Three Img  -->
+		<section class="container mx-auto my-14 grid grid-cols-3 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
+			<div>
+				<img src="./banner_box1.webp" alt="" loading="lazy">
+			</div>
+			<div>
+				<img src="./banner_box2.webp" alt="" loading="lazy">
+			</div>
+			<div>
+				<img src="./banner_box3.webp" alt="" loading="lazy">
+			</div>
+		</section>
+		<!-- End Section Three Img  -->
+		<!-- Start Section Mobile -->
+		<section class="container p-4 mx-auto select-none">
+			<div class="border-b-2 border-[#FF8716]">
+				<h4
+					class="tracking-widest uppercase flex gap-3 items-center py-3 px-5 bg-[#FF8716] w-fit text-white font-bold text-lg relative before:absolute before:w-0 before:h-0 before:top-0 before:left-0 before:border-l-[20px] before:border-solid before:border-transparent before:bg-[#fff] before:border-b-[20px] before:border-b-[#e26e02]  ">
+					mobiles
+				</h4>
+			</div>
+			<div class=" Swiper overflow-hidden">
+				<div class="swiper-wrapper flex gap-4 " id="swiper-mobiles">
+				</div>
+			</div>
+		</section>
+		<!-- End Section Mobile -->
+	</main>
+	<!-- End Main -->
+	<!-- Start Footer  -->
+	<Footer class="bg-black">
+		<section class="container mx-auto text-white flex flex-wrap justify-around p-8 pb-20 gap-10">
+		<div>
+			<div>
+				<img src="./white_logo.webp" alt="Logo-Footer" class="w-44" loading="lazy">
+			</div>
+			<p class=" w-[350px] my-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dolor voluptas et voluptatem nemo minima illo! </p>
+			<div class="flex gap-5"> 
+				<svg class="cursor-pointer hover:stroke-[#68217a] duration-300" width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+				</svg>
+				<svg class="cursor-pointer hover:stroke-[#1877f2] duration-300" width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+				</svg>
+				<svg class="cursor-pointer hover:stroke-[#405de6] duration-300" width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+					<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+					<path d="M17.5 6.5h.01"></path>
+				</svg>
+				<svg class="cursor-pointer hover:stroke-[#1da1f2] duration-300" width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83A7.72 7.72 0 0 0 23 3Z"></path>
+				</svg>
+			</div>
+		</div>
+		<div class="">
+			<h3 class="text-3xl font-bold mb-6">Find It Fast</h3>
+			<ul class="opacity-60 ">
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Laptops & Computers 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Smart phones & Tablets 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> TV & Audio 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Appliances 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Jewelry & Watches 
+				</li>
+				
+			</ul>
+		</div>
+		<div class="">
+			<h3 class="text-3xl font-bold mb-6">Quick Links</h3>
+			<ul class="opacity-60">
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Your Account 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Returns & Exchanges
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Shipping & Delivery 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Estimated Delivery Time 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Purchase History 
+				</li>
+				
+			</ul>
+		</div>
+		<div class="">
+			<h3 class="text-3xl font-bold mb-6">Service Us</h3>
+			<ul class="opacity-60 ">
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300 ">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Support Center 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300 ">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Term & Conditions
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300 ">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Privact & Policy 
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300 ">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> Help
+				</li>
+				<li class="flex gap-2 items-center hover:[#FF8716] hover:ml-3 cursor-pointer duration-300 ">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(255,135,22,1)"><path d="M12 13H4V11H12V4L20 12L12 20V13Z"></path></svg> FAQS 
+				</li>
+				
+			</ul>
+		</div>
+		</section>
+		<div class="pb-8 mx-auto container text-white flex flex-wrap items-center justify-between" >
+			<p>&copy; 2024 <span class="text-[#FF8716] font-bold">Reda Store.</span> All Rights Reserved.</p>
+			<img src="./payment_method.webp" alt="Img-payment-method" loading="lazy">
+		</div>
+	</Footer>
+	<!-- End Footer  -->
+</body>
+</html>
